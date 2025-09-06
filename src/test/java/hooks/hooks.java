@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter;
 public class hooks {
     public static WebDriver driver;
 
-    //comentario de teste para commit
+    //comentario de teste para commit pelo intelliJ
     @Before(order = 0)
     public void startDriver(Scenario scenario) {
         WebDriverManager.chromedriver().setup(); // setando o driver

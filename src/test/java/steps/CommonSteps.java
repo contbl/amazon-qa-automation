@@ -16,6 +16,7 @@ public class CommonSteps {
         home.open();
     }
 
+    //COmmit de teste pelo intelliJ
     @Quando("eu digito {string} na busca")
     public void digitarNaBusca(String termo) {
         home.typeSearch(termo);
