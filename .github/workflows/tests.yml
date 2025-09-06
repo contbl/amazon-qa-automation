@@ -38,10 +38,9 @@ jobs:
 
       # 5) Publica o relatório Extent (HTML + screenshots) como artefato
       - name: Upload Extent report
-        if: always()              # publica mesmo se os testes falharem
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: extent-report
-          path: |
-            reports/**            # sua pasta de relatórios
+          path: reports/**
           retention-days: 7
