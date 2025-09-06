@@ -16,6 +16,7 @@ public class hooks {
     //comentario de teste para commit pelo intelliJ
     @Before(order = 0)
     public void startDriver(Scenario scenario) {
+        if (!scenario.getSourceTagNames().contains("@ui")) return;
         WebDriverManager.chromedriver().setup(); // setando o driver
         ChromeOptions options = new ChromeOptions();
         if (Boolean.parseBoolean(System.getProperty("headless","false"))) {
@@ -28,8 +29,10 @@ public class hooks {
     // Screenshot após cada passo (aparece no Extent)
     @AfterStep
     public void afterStep(Scenario scenario) {
+        // só tira screenshot se existe driver (cenários @ui)
+        if (driver == null) return;
         try {
-            byte[] bytes = ((TakesScreenshot) hooks.driver).getScreenshotAs(OutputType.BYTES);
+            byte[] bytes = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(bytes, "image/png", "step");
         } catch (Exception ignored) {}
     }
@@ -51,10 +54,8 @@ public class hooks {
     }
 
     @After(order = 0)
-    public void quit() {
-        if (driver != null) {
-            driver.quit();
-        }
+    public void quit(Scenario scenario) {
+        if (driver != null) driver.quit();
     }
 }
 

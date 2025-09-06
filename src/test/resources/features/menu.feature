@@ -1,4 +1,5 @@
 # language: pt
+@ui
 Funcionalidade: Menu de navegação
 
   Cenário: Abrir menu hamburguer

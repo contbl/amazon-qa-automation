@@ -1,4 +1,5 @@
 # language: pt
+@ui
 Funcionalidade: Autocomplete de busca
 
   Cenário: Exibir sugestões ao digitar termo válido

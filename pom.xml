@@ -15,6 +15,7 @@
         <cucumber.version>7.14.0</cucumber.version>
         <selenium.version>4.23.0</selenium.version>
         <extent.adapter.version>1.14.0</extent.adapter.version>
+        <restassured.version>5.4.0</restassured.version>
     </properties>
 
     <dependencies>
@@ -72,6 +73,21 @@
             <groupId>tech.grasshopper</groupId>
             <artifactId>extentreports-cucumber7-adapter</artifactId>
             <version>${extent.adapter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${restassured.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- (opcional) Validação por JSON Schema -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>${restassured.version}</version>
             <scope>test</scope>
         </dependency>
 

@@ -1,4 +1,5 @@
 # language: pt
+@ui
 Funcionalidade: Pesquisa e detalhe de produto
 
   Cenário: Pesquisar por Playstation 5 e abrir a página de detalhes

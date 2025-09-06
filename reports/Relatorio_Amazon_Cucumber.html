@@ -8,7 +8,7 @@
 <title></title>
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
-<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
 <style type="text/css"></style></head><body class="spa bdd-report standard">
@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">set. 6, 2025 03:30:52 PM</span></a>
+<a href="#"><span class="badge badge-primary">set. 6, 2025 06:30:14 PM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -71,6 +76,12 @@
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
 </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@api</a>
+</ul>
+</li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
@@ -79,9 +90,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Autocomplete de busca</p>
+            <p class="name">Usuários (API - reqres.in)</p>
             <p class="text-sm">
-              <span>15:30:52</span> / <span>00:00:14:045</span>
+              <span>18:30:14</span> / <span>00:00:03:500</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -89,14 +100,13 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Autocomplete de busca</h5>
-<span class='badge badge-success'>09.06.2025 15:30:52</span>
-<span class='badge badge-danger'>09.06.2025 15:31:06</span>
-<span class='badge badge-default'>00:00:14:045</span>
+<h5 class="test-status text-pass">Usuários (API - reqres.in)</h5>
+<span class='badge badge-success'>09.06.2025 18:30:14</span>
+<span class='badge badge-danger'>09.06.2025 18:30:18</span>
+<span class='badge badge-default'>00:00:03:500</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
 <div class="m-t-10 m-l-5"></div>
 </div>
@@ -105,261 +115,74 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Exibir sugestões ao digitar termo válido</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Consultar usuário existente</div>
       </div>
     </div>
         <div class="collapse">
           <div class="card-body">
-              <div class="step pass-bg" title="steps.CommonSteps.abrirHome()">
-                <span>Dado que estou na home da Amazon</span>
+              <div class="step pass-bg" title="steps.api.ApiSteps.baseUrl(java.lang.String)">
+                <span>Dado que a API base é "https://reqres.in"</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>hooks.hooks.afterStep(io.cucumber.java.Scenario)</span>
-      <div>step
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='./screenshots/embedded1.png' src="./screenshots/embedded1.png">
-    
-    </div></div>
-</div>
+              <div class="step pass-bg" title="steps.api.ApiSteps.getEm(java.lang.String)">
+                <span>Quando eu faço GET em "/api/users/2"</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="steps.CommonSteps.digitarNaBusca(java.lang.String)">
-                <span>Quando eu digito "iphone" na busca</span>
+              <div class="step pass-bg" title="steps.api.ApiSteps.statusDeveSer(int)">
+                <span>Então o status deve ser 200</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>hooks.hooks.afterStep(io.cucumber.java.Scenario)</span>
-      <div>step
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='./screenshots/embedded2.png' src="./screenshots/embedded2.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="steps.CommonSteps.validarSugestoes()">
-                <span>Então devo ver sugestões de autocomplete</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>hooks.hooks.afterStep(io.cucumber.java.Scenario)</span>
-      <div>step
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='./screenshots/embedded3.png' src="./screenshots/embedded3.png">
-    
-    </div></div>
-</div>
+              <div class="step pass-bg" title="steps.api.ApiSteps.campoDeveSer(java.lang.String,java.lang.String)">
+                <span>E o campo "data.first_name" deve ser "Janet"</span>
       <div>
       </div>
               </div>
           </div>
         </div>
   </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="12"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Menu de navegação</p>
-            <p class="text-sm">
-              <span>15:31:06</span> / <span>00:00:14:404</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Menu de navegação</h5>
-<span class='badge badge-success'>09.06.2025 15:31:06</span>
-<span class='badge badge-danger'>09.06.2025 15:31:21</span>
-<span class='badge badge-default'>00:00:14:404</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="13"><span class="badge log pass-bg mr-2">Pass</span>Abrir menu hamburguer</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
+        <div class="node" id="14"><span class="badge log pass-bg mr-2">Pass</span>Criar usuário</div>
       </div>
     </div>
         <div class="collapse">
           <div class="card-body">
-              <div class="step pass-bg" title="steps.CommonSteps.abrirHome()">
-                <span>Dado que estou na home da Amazon</span>
+              <div class="step pass-bg" title="steps.api.ApiSteps.baseUrl(java.lang.String)">
+                <span>Dado que a API base é "https://reqres.in"</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>hooks.hooks.afterStep(io.cucumber.java.Scenario)</span>
-      <div>step
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='./screenshots/embedded4.png' src="./screenshots/embedded4.png">
-    
-    </div></div>
+              <div class="step pass-bg" title="steps.api.ApiSteps.postEmComCorpo(java.lang.String,java.lang.String)">
+                <span>Quando eu faço POST em "/api/users" com o corpo:</span>
+      <div><div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+  "name": "rafael",
+  "job": "qa"
+}</textarea>
+ </div>
 </div>
+
+      </div>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="steps.CommonSteps.abrirMenu()">
-                <span>Quando eu abro o menu</span>
+              <div class="step pass-bg" title="steps.api.ApiSteps.statusDeveSer(int)">
+                <span>Então o status deve ser 201</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>hooks.hooks.afterStep(io.cucumber.java.Scenario)</span>
-      <div>step
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='./screenshots/embedded5.png' src="./screenshots/embedded5.png">
-    
-    </div></div>
-</div>
+              <div class="step pass-bg" title="steps.api.ApiSteps.campoDeveSer(java.lang.String,java.lang.String)">
+                <span>E o campo "name" deve ser "rafael"</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="steps.CommonSteps.menuVisivel()">
-                <span>Então o menu deve estar visível</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>hooks.hooks.afterStep(io.cucumber.java.Scenario)</span>
-      <div>step
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='./screenshots/embedded6.png' src="./screenshots/embedded6.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="23"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Pesquisa e detalhe de produto</p>
-            <p class="text-sm">
-              <span>15:31:21</span> / <span>00:00:19:439</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Pesquisa e detalhe de produto</h5>
-<span class='badge badge-success'>09.06.2025 15:31:21</span>
-<span class='badge badge-danger'>09.06.2025 15:31:40</span>
-<span class='badge badge-default'>00:00:19:439</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="24"><span class="badge log pass-bg mr-2">Pass</span>Pesquisar por Playstation 5 e abrir a página de detalhes</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="steps.CommonSteps.abrirHome()">
-                <span>Dado que estou na home da Amazon</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>hooks.hooks.afterStep(io.cucumber.java.Scenario)</span>
-      <div>step
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='./screenshots/embedded7.png' src="./screenshots/embedded7.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="steps.CommonSteps.digitarNaBuscaParaBsucar(java.lang.String)">
-                <span>Quando eu digito "B0F7Z9F9SD" na busca para buscar</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>hooks.hooks.afterStep(io.cucumber.java.Scenario)</span>
-      <div>step
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='./screenshots/embedded8.png' src="./screenshots/embedded8.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="steps.CommonSteps.selecionarPrimeiroResultado()">
-                <span>E eu seleciono o primeiro resultado</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>hooks.hooks.afterStep(io.cucumber.java.Scenario)</span>
-      <div>step
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='./screenshots/embedded9.png' src="./screenshots/embedded9.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="steps.CommonSteps.validarDetailPage()">
-                <span>Então a página de detalhes deve ser exibida</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER_STEP">
-                <span>hooks.hooks.afterStep(io.cucumber.java.Scenario)</span>
-      <div>step
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='./screenshots/embedded10.png' src="./screenshots/embedded10.png">
-    
-    </div></div>
-</div>
+              <div class="step pass-bg" title="steps.api.ApiSteps.campoDeveExistir(java.lang.String)">
+                <span>E o campo "id" deve existir</span>
       <div>
       </div>
               </div>
@@ -378,24 +201,86 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="container-fluid p-4 view dashboard-view">
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@api</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@api</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:30:14 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Consultar usuário existente</a>
+<div class="">
+<span class="badge badge-default">Usuários (API - reqres.in).Consultar usuário existente</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:30:17 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='14'>Criar usuário</a>
+<div class="">
+<span class="badge badge-default">Usuários (API - reqres.in).Criar usuário</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>set. 6, 2025 03:30:52 PM</h3>
+<h3>set. 6, 2025 06:30:14 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>set. 6, 2025 03:31:40 PM</h3>
+<h3>set. 6, 2025 06:30:18 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>3</h3>
+<h3>1</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -418,7 +303,7 @@
 </div>
 <div class="card-footer">
 <div><small data-tooltip='100%'>
-<b>3</b> features passed
+<b>1</b> features passed
 </small>
 </div>
 <div>
@@ -440,7 +325,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>3</b> scenarios passed</small></div>
+<div><small data-tooltip='100%'><b>2</b> scenarios passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -460,7 +345,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>20</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>9</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -479,27 +364,44 @@
 </div></div>
 <script>
 var timeline = {
-"Autocomplete de busca":14.045,"Menu de navegação":14.404,"Pesquisa e detalhe de produto":19.439
+"Usuários (API - reqres.in)":3.5
 };
 </script>
 <div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@api</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
 </div>
 </div>
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 3,
+passParent: 1,
 failParent: 0,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 3,
+passChild: 2,
 failChild: 0,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 20,
+passGrandChild: 9,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,
@@ -510,6 +412,6 @@ eventsCount: 5,
       </div>
     </div>
   </div>
-<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/js/spark-script.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
 <script type="text/javascript"></script></body>
 </html>
