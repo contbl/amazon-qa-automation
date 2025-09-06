@@ -29,7 +29,7 @@ public class hooks {
     @AfterStep
     public void afterStep(Scenario scenario) {
         try {
-            byte[] bytes = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            byte[] bytes = ((TakesScreenshot) hooks.driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(bytes, "image/png", "step");
         } catch (Exception ignored) {}
     }

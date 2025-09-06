@@ -36,11 +36,19 @@ jobs:
       - name: Run tests
         run: mvn -B -Dheadless=true clean test
 
+      - name: List reports (debug)
+        if: always()
+        run: |
+          ls -la reports || true
+          ls -la reports/screenshots || true    
+
       # 5) Publica o relatório Extent (HTML + screenshots) como artefato
       - name: Upload Extent report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: extent-report
-          path: reports/**
-          retention-days: 7
+          path: |
+            reports/Relatorio_Amazon_Cucumber.html
+            reports/Relatorio_Amazon_Cucumber.pdf
+            reports/screenshots/
