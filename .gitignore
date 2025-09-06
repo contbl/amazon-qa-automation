@@ -36,3 +36,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+# Relatórios e screenshots gerados
+/reports/
+/screenshots/
