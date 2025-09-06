@@ -1,0 +1,47 @@
+name: CI - Cucumber Selenium
+
+on:
+  push:
+    branches: [ main ]      # rode em pushes na main (ajuste se usa master ou outra)
+  pull_request:             # rode em PRs
+  workflow_dispatch:        # permite rodar manualmente pelo botão "Run workflow"
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+
+    env:
+      TZ: America/Sao_Paulo # timestamps do relatório na sua timezone
+
+    steps:
+      # 1) Pega o código do repo
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2) Seta JDK 21 e cache do Maven (~/.m2)
+      - name: Set up Java 21 (Temurin) + Maven cache
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      # 3) Instala Google Chrome no runner
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      # 4) Executa os testes em modo headless
+      - name: Run tests
+        run: mvn -B -Dheadless=true clean test
+
+      # 5) Publica o relatório Extent (HTML + screenshots) como artefato
+      - name: Upload Extent report
+        if: always()              # publica mesmo se os testes falharem
+        uses: actions/upload-artifact@v4
+        with:
+          name: extent-report
+          path: |
+            reports/**            # sua pasta de relatórios
+          retention-days: 7
